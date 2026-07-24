@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getProjects } from '../api';
-import { Project, ProjectCategory } from '../types';
+import { Project } from '../types';
 import ProjectCard from '../components/ProjectCard';
 
 const FILTERS: { label: string; value: string }[] = [
