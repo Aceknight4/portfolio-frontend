@@ -1,0 +1,131 @@
+/*
+  Blueprint theme — design tokens
+  --------------------------------
+  Import this file ONCE, in src/index.css, as the very first line:
+
+    @import './styles/theme.css';
+
+  All classes below are prefixed with "bp-" so they can never collide
+  with your old CSS classes, no matter what's still in App.css.
+*/
+
+:root {
+  --bp-bg: #F4F5F1;
+  --bp-surface: #FFFFFF;
+  --bp-line: #DEDFD8;
+  --bp-ink: #14181F;
+  --bp-muted: #5B6472;
+  --bp-accent: #0B5D6B;
+  --bp-accent-tint: #E4EFEE;
+
+  --font-display: 'Instrument Serif', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  background: var(--bp-bg);
+  color: var(--bp-ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+.bp-btn {
+  display: inline-block;
+  padding: 14px 26px;
+  font-size: 14px;
+  border-radius: 2px;
+  font-family: var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.bp-btn--primary {
+  background: var(--bp-ink);
+  color: var(--bp-bg);
+}
+.bp-btn--primary:hover {
+  background: var(--bp-accent);
+}
+.bp-btn--accent {
+  background: var(--bp-accent);
+  color: #fff;
+}
+.bp-btn--accent:hover {
+  background: #0E7284;
+}
+.bp-btn--secondary {
+  border-color: var(--bp-line);
+  color: var(--bp-ink);
+  background: transparent;
+}
+.bp-btn--secondary:hover {
+  border-color: var(--bp-ink);
+}
+
+.bp-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--bp-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+}
+.bp-eyebrow--light {
+  color: #8FD4C8;
+}
+
+.bp-chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--bp-accent);
+  background: var(--bp-accent-tint);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------------
+   Dark mode
+   ------------------------------------------------------------------
+   Activated by adding data-theme="dark" to the <html> element
+   (handled automatically by ThemeToggle.tsx — see components/).
+   Every component already reads colors from these variables, so
+   nothing else needs to change to support this.
+------------------------------------------------------------------- */
+[data-theme='dark'] {
+  --bp-bg: #14181A;
+  --bp-surface: #1B2027;
+  --bp-line: #2A313B;
+  --bp-ink: #F2F4F1;
+  --bp-muted: #9AA3AE;
+  --bp-accent: #3ED6C8;
+  --bp-accent-tint: rgba(62, 214, 200, 0.12);
+}
+
+[data-theme='dark'] .bp-btn--primary {
+  background: var(--bp-accent);
+  color: #0B0F10;
+}
+[data-theme='dark'] .bp-btn--primary:hover {
+  background: #55E0D4;
+}
+[data-theme='dark'] .bp-stats-section {
+  background: #0B0F10;
+}
+
+/* ------------------------------------------------------------------
+   Page wrapper
+   ------------------------------------------------------------------
+   Wrap the returned JSX of every Blueprint-styled page in this class,
+   e.g. <div className="bp-page"> ... </div>. It exists purely so this
+   theme can never be silently overridden by old global rules on
+   body/.App — a class selector always wins over an element selector,
+   no matter what order the stylesheets load in.
+------------------------------------------------------------------- */
+.bp-page {
+  background: var(--bp-bg);
+  color: var(--bp-ink);
+  font-family: var(--font-body);
+  text-align: left;
+  min-height: 100vh;
+}

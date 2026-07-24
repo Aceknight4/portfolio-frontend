@@ -1,0 +1,80 @@
+.bp-project-card {
+  background: var(--bp-surface);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.bp-project-card:hover {
+  background: var(--bp-accent-tint);
+}
+
+.bp-project-card__category {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bp-accent);
+  background: var(--bp-accent-tint);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+/* Per-category colors, matched to your real category values
+   (found in your old App.css: web_app / api / tool). Muted enough
+   to stay in Blueprint's palette instead of the old bright versions. */
+.bp-cat-web_app { color: #1D4ED8; background: #E8EEFB; }
+.bp-cat-api     { color: #0F6E56; background: #E3F3EE; }
+.bp-cat-tool    { color: #6D28D9; background: #F1E9FB; }
+
+.bp-project-card__title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.bp-project-card__desc {
+  font-size: 14px;
+  color: var(--bp-muted);
+  flex: 1;
+  margin: 0;
+}
+
+.bp-project-card__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.bp-project-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bp-line);
+}
+
+.bp-project-card__link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--bp-ink);
+  text-decoration: none;
+}
+
+.bp-project-card__link:hover {
+  color: var(--bp-accent);
+}
+
+.bp-project-card__date {
+  margin-left: auto;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--bp-muted);
+}

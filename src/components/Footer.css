@@ -1,0 +1,12 @@
+.bp-footer {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--bp-muted);
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid var(--bp-line);
+  background: var(--bp-bg);
+}
