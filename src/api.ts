@@ -3,7 +3,7 @@ import {
   ContactMessage, ContactPayload, PaginatedResponse
 } from './types';
 
-const BASE = 'http://127.0.0.1:8000/api';
+const BASE = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000/api';
 
 const token    = (): string | null  => localStorage.getItem('token');
 const headers  = (): HeadersInit    => ({
