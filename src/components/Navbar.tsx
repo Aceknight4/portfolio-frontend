@@ -27,15 +27,16 @@ export default function Navbar() {
 
       <div className="bp-navbar__right">
         <ThemeToggle />
-        {loggedIn ? (
-          <>
-            <NavLink to="/dashboard" className="bp-navbar__cta">Dashboard</NavLink>
-            <button type="button" className="bp-navbar__cta" onClick={handleLogout}>
-              Logout
+        {loggedIn && (
+         <>
+            <NavLink to="/dashboard" className="btn-dash">
+             Dashboard
+            </NavLink>
+
+            <button className="btn-dash" onClick={handleLogout}>
+             Logout
             </button>
-          </>
-        ) : (
-          <NavLink to="/login" className="bp-navbar__cta">Admin</NavLink>
+         </>
         )}
       </div>
     </nav>
