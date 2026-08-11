@@ -33,7 +33,7 @@ export default function Navbar() {
              Dashboard
             </NavLink>
 
-            <button className="btn-dash" onClick={handleLogout}>
+            <button className="btn-dash" onClick={handleLogout} style={{ marginLeft: 4 }}>
              Logout
             </button>
          </>
